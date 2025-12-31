@@ -33,12 +33,19 @@ class MyProfileApp extends StatelessWidget {
                 ),
                 // 4. A Divider (Like a <hr> in HTML)
                 const SizedBox(height: 20, width: 150, child: Divider(color: Color.fromARGB(255, 168, 168, 28))),
-                // 5. The "Action" Button
-                ElevatedButton(
+                // 5. The "Action" Button (Now with an Icon!)
+                ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.teal, 
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                ),
                   onPressed: () {
-                    print("Portfolio Button Clicked!"); // This shows in your VS Code console
+                  // This is the logic "slot" - currently just a console message
+                    print("Contact Button Pressed!"); 
                   },
-                  child: const Text('Contact Me'),
+                  icon: const Icon(Icons.email, size: 18), // Slot 1: The Icon
+                  label: const Text('Contact Me'),         // Slot 2: The Label
                 ),
                 
                 ElevatedButton(
