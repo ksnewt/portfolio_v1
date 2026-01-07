@@ -19,42 +19,42 @@ class MyProfileApp extends StatelessWidget {
                 const CircleAvatar(
                   radius: 50.0,
                   backgroundColor: Colors.blue,
-                  child: Icon(Icons.person, size: 50, color: Color.fromARGB(255, 251, 251, 251)),
+                  child: Icon(Icons.shopping_bag, size: 100, color: Color.fromARGB(255, 251, 251, 251)),
                 ),
                 // 2. The Name (Text widget)
                 const Text(
-                  'Kaleb Newton',
-                  style: TextStyle(fontSize: 40.0, color: Color.fromARGB(255, 255, 255, 255), fontWeight: FontWeight.bold),
+                  'Pro Wireless Headphones',
+                  style: TextStyle(fontSize: 20.0, color: Color.fromARGB(255, 255, 255, 255), fontWeight: FontWeight.bold),
                 ),
                 // 3. The Subtitle
                 Text(
-                  'FULL STACK DEVELOPER',
+                  '\$299.99',
                   style: TextStyle(color: Colors.blue.shade100, fontSize: 20.0, letterSpacing: 2.5),
                 ),
                 // 4. A Divider (Like a <hr> in HTML)
                 const SizedBox(height: 20, width: 150, child: Divider(color: Color.fromARGB(255, 168, 168, 28))),
                 // 5. The "Action" Button (Now with an Icon!)
-                ElevatedButton.icon(
-                  style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.teal, 
-                  foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                ),
-                  onPressed: () {
-                  // This is the logic "slot" - currently just a console message
-                    print("Contact Button Pressed!"); 
-                  },
-                  icon: const Icon(Icons.email, size: 18), // Slot 1: The Icon
-                  label: const Text('Contact Me'),         // Slot 2: The Label
-                ),
-                
-                ElevatedButton(
-                  onPressed: () {
-                    print("Contact Saved!");
-                  }, 
-                  child: const Text('Save Contact')
-                ),
-              ],
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton.icon(
+                      onPressed: () {
+                      print("Added to Cart!");
+                    }, 
+                    icon: const Icon(Icons.shopping_cart, size: 18),
+                    label: const Text('Add to Cart'),
+                    ),
+                    const SizedBox(width: 10), //Horizontal gap between buttons
+                    OutlinedButton(
+                      onPressed: (){
+                      print('Details Clicked');
+                    }, 
+                    
+                    child: const Text('Details')
+                    )
+                  ],
+                )
+              ], //children
             ),
           ),
         ),
