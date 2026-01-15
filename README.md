@@ -1,16 +1,20 @@
-# portfolio_v1
+# My Flutter Portfolio (V1)
 
-A new Flutter project.
+A professional Flutter application demonstrating UI Architecture and State Management logic
 
-## Getting Started
+## 🚀 Features
 
-This project is a starting point for a Flutter application.
+- **Custom UI Layout:** Nested Row and Column Architecture.
+- **State Management:** Utilizes 'StatefulWidget' and 'setState' for real-time data updates.
+- **Defensive Programming:** Implemented Guard Clauses to prevent negative cart counts.
+- **User Feedback:** Integrated 'Scaffold Messenger' and 'SnackBars' for context-aware alerts.
 
-A few resources to get you started if this is your first Flutter project:
+## 🔨 Skills Demonstrated
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Dart Logic:** Variable initalization and math operations.
+- **Flutter Framework:** Working with Context, Builders, and Material Design widgets.
+- **Git Version Control:** Professional commit history and repository management.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📱 Current State
+
+Currently at **Level 6 (The Logician)**. Next milestone: Navigation and multi-screen architecture.
