@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'details_screen.dart';
 
 void main() => runApp(const MyProfileApp());
 
@@ -95,7 +96,15 @@ class _MyProfileAppState extends State<MyProfileApp> {
                           width: 10,
                         ), //Horizontal gap between buttons
                         OutlinedButton(
-                          onPressed: () => print('Details Clicked'),
+                          onPressed: () {
+                            // The navigator Command
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const DetailsScreen(),
+                              ),
+                            );
+                          },
                           child: const Text('Details'),
                         ),
                       ],
