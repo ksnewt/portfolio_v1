@@ -15,12 +15,25 @@ class DetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text((productName)),
-      body: const Center(
-        child: Column()
-          'Detailed View of Headphones\n\nBluetooth 6.0 | 40hr Battery',
-          textAlign: TextAlign.center,
-          style: TextStyle(color: Colors.white, fontSize: 18),
+      appBar: AppBar(title: Text(productName)),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              productName,
+              style: const TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Color.fromARGB(255, 59, 54, 208),
+              ),
+            ),
+            const SizedBox(height: 10),
+            Text(
+              'Price: \$${productPrice.toStringAsFixed(2)}',
+              style: const TextStyle(fontSize: 20, color: Colors.tealAccent),
+            ),
+          ],
         ),
       ),
     );

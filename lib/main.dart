@@ -15,13 +15,13 @@ class _MyProfileAppState extends State<MyProfileApp> {
   int cartCount = 0;
   double totalPrice = 0.0;
   final double headphonePrice =
-      299.99; // Using a variable instead of hard-coding 299.99
+      199.99; // Using a variable instead of hard-coding 299.99
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.blueGrey[900], // Background color
+        backgroundColor: Colors.blueGrey[800], // Background color
         body: SafeArea(
           child: Builder(
             builder: (BuildContext context) {
@@ -101,7 +101,11 @@ class _MyProfileAppState extends State<MyProfileApp> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const DetailsScreen(),
+                                builder: (context) => DetailsScreen(
+                                  productName:
+                                      'Pro Wireless Headphones', //sending the name
+                                  productPrice: headphonePrice,
+                                ),
                               ),
                             );
                           },
