@@ -2,6 +2,14 @@
 
 A professional Flutter application demonstrating UI Architecture, State Management, and Scalable Logic.
 
+## 📁 Project Structure & Raw Code
+
+To view the core logic and architectural implementation, please see the following files:
+
+- [**Main Logic (State & UI)**](lib/main.dart): Contains the Shopping Cart logic, LIFO Stack implementation, and ListView builder.
+- [**Navigation & Details**](lib/details_screen.dart): Demonstrates data passing and multi-screen architecture.
+- [**Data Model**](lib/main.dart#L4): The Product Class "Blueprint".
+
 ## 🚀 Features
 
 - **Dynamic List Architecture:** Moved from static widgets to a `ListView.builder` factory that generates UI from data models.
