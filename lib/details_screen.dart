@@ -1,3 +1,17 @@
+/* * KALEB NEWTON
+ * 19 March 2026
+ * * PROJECT: Price Comparison App (V1)
+ * FILE: details_screen.dart
+ * * DESCRIPTION:
+ * This screen acts as the dynamic "Destination" for the product catalog.
+ * It demonstrates deep-link navigation and data encapsulation by 
+ * receiving a 'Product' object and rendering its specific attributes.
+ * * USAGE:
+ * 1. This file is pushed onto the Navigator stack from 'home_screen.dart'.
+ * 2. It requires 'productName' and 'productPrice' as required constructor 
+ * parameters to initialize the UI state.
+ */
+
 import 'package:flutter/material.dart';
 
 class DetailsScreen extends StatelessWidget {
