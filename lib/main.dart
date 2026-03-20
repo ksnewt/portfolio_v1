@@ -1,3 +1,19 @@
+/* * KALEB NEWTON
+ * 19 March 2026
+ * * PROJECT: Price Comparison App (V1)
+ * FILE: main.dart
+ * * DESCRIPTION:
+ * The entry point for the Flutter application. This file initializes 
+ * the 'MyProfileApp' widget and sets up the root Material Design 
+ * theme and configuration.
+ * * ARCHITECTURE OVERVIEW:
+ * 1. lib/models/product.dart: Core data schema and JSON serialization.
+ * 2. lib/screens/home_screen.dart: Main UI, State Management, and LIFO Logic.
+ * 3. lib/screens/details_screen.dart: Dynamic data-rendering for specific items.
+ * * USAGE:
+ * Run 'flutter run' from the root directory to initialize the mobile environment.
+ */
+
 import 'package:flutter/material.dart';
 import 'details_screen.dart';
 
