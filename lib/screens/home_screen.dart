@@ -61,7 +61,19 @@ class _HomeScreenState extends State<HomeScreen> {
                     return const Center(child: CircularProgressIndicator());
                   }
 
-                  // Okay, the data arrived safely! Let's build the factory line.
+                  // If the python bot or JSON file crashes, print exact reason on screen
+                  if (snapshot.hasError) {
+                    print("DEBUG ERROR: ${snapshot.error}");
+                    return Center(
+                      child: Text(
+                        'ERROR: ${snapshot.error}',
+                        style: const TextStyle(color: Colors.red, fontSize: 16),
+                        textAlign: TextAlign.center,
+                      ),
+                    );
+                  }
+
+                  // Data arrived safely
                   if (snapshot.hasData) {
                     final products = snapshot.data!;
 

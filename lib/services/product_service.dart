@@ -9,20 +9,23 @@
  * This is where we will eventually plug in our Python Web-Scrapers.
  */
 
-import 'package:flutter/material.dart';
+import 'dart:convert'; // Required for decoding JSON text
+import 'package:flutter/services.dart';
 import '../models/product.dart';
 
 class ProductService {
   // To simulate future Python backend implementation
   Future<List<Product>> fetchProducts() async {
-    // 2-second delay for thinking simulation
+    // 2-second delay for thinking simulation / loading
     await Future.delayed(const Duration(seconds: 2));
 
-    return [
-      Product(name: 'Pro Headphones', price: 199.99, icon: Icons.headset),
-      Product(name: 'Smart Watch', price: 249.99, icon: Icons.watch),
-      Product(name: 'Wireless Mouse', price: 49.99, icon: Icons.mouse),
-      Product(name: 'Gaming Keyboard', price: 129.99, icon: Icons.keyboard),
-    ];
+    // Reach into assets folder to grab the rawr text
+    final String response = await rootBundle.loadString('assets/data/products.json');
+
+    // Turn that long string of text into a list of Maps
+    final List<dynamic> data = json.decode(response);
+
+    // Use the fromJSON as translator to turn maps into a list of products
+    return data.map((json) => Product.fromJson(json)).toList();
   }
 }

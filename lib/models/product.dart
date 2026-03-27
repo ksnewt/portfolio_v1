@@ -15,17 +15,26 @@ import 'package:flutter/material.dart';
 class Product {
   final String name;
   final double price;
-  final IconData icon;
+  final int iconCode;
 
-  Product({required this.name, required this.price, required this.icon});
+  Product({required this.name, required this.price, required this.iconCode});
 
-  // --- THE TRANSLATOR (Level 9) ---
+  // --- THE TRANSLATOR ---
   // This turns a JSON Map into a Product Object
   factory Product.fromJson(Map<String, dynamic> json) {
     return Product(
-      name: json['name'],
-      price: json['price'],
-      icon: json['icon'],
+      name: json['name'].toString(),
+
+      // By converting the raw data to a string FIRST, double.parse() will
+      // successfully extract the math value whether it had quotes or not
+      price: double.parse(
+        json['price'].toString(),
+      ), // Safety measure to ensure number stays a double
+      // JSON are 'int'... they are mapped here
+      iconCode: int.parse(json['icon_code'].toString()),
     );
   }
+
+  // A helper to convert that number into a real icon on the screen
+  IconData get icon => IconData(iconCode, fontFamily: 'MaterialIcons');
 }
