@@ -1,34 +1,35 @@
-# My Flutter Portfolio (V1)
+# 🛍️ Price Comparison App (V1)
 
-A professional Flutter application demonstrating UI Architecture, State Management, and Scalable Logic.
+A professional Flutter application demonstrating **Layered Architecture**, **Asynchronous State Management**, and **Scalable Logic**.
 
-## 📁 Project Structure & Raw Code
+Created by **Kaleb Newton** | March 2026
 
-To view the core logic and architectural implementation, please see the following files:
+## 📁 Project Structure & Raw Code Map
 
-- [**Main Logic (State & UI)**](lib/main.dart): Contains the Shopping Cart logic, LIFO Stack implementation, and ListView builder.
-- [**Navigation & Details**](lib/details_screen.dart): Demonstrates data passing and multi-screen architecture.
-- [**Data Model**](lib/main.dart#L4): The Product Class "Blueprint".
+To maintain a "Single Source of Truth" and keep the code scalable, the project is organized into a modular architecture. Click the file names below to view the raw implementation:
 
-## 🚀 Features
+- **[main.dart](lib/main.dart)**: **The App Entry Point.** Handles environment initialization and hands off control to the UI layers.
+- **[models/product.dart](lib/models/product.dart)**: **The Data Blueprint.** Defines the `Product` class and the `fromJson` factory for future backend communication.
+- **[services/product_service.dart](lib/services/product_service.dart)**: **The API Service Layer.** Manages asynchronous logic for fetching data from the simulated Python backend.
+- **[screens/home_screen.dart](lib/screens/home_screen.dart)**: **The State & UI Engine.** Manages the shopping cart, LIFO stack logic, and real-time UI updates.
+- **[screens/details_screen.dart](lib/screens/details_screen.dart)**: **The Navigation Destination.** Renders dynamic product data passed through the navigator.
 
-- **Dynamic List Architecture:** Moved from static widgets to a `ListView.builder` factory that generates UI from data models.
-- **LIFO Cart Logic:** Implemented a **Stack-Based** shopping cart (Last-In, First-Out). The "Remove" button intelligently pops the last item added and subtracts its specific price.
-- **State Management:** Utilizes `setState` to sync the UI with a `List<Product>` data structure in real-time.
-- **Defensive Programming:** Implemented Guard Clauses (`if (cart.isNotEmpty)`) to prevent crashes and negative counts.
-- **Navigation:** Implemented "Teleportation" (Navigation) to pass specific data objects to a Details Screen.
+## 🚀 Key Engineering Features
+
+- **Asynchronous Data Flow (Level 9):** Utilizes a `FutureBuilder` to intelligently manage **Loading**, **Data**, and **Error** states during network simulation.
+- **LIFO (Last-In, First-Out) Cart Logic:** Implements a stack-based cart system where the "Remove" button intelligently pops the most recent item to ensure total price accuracy.
+- **JSON Serialization Ready:** Built with a `factory Product.fromJson` constructor to act as the "Translator" for future SQL/Python integration.
+- **Defensive Programming:** Integrated Guard Clauses (`if (cart.isNotEmpty)`) and SnackBars to prevent state errors and provide clear user feedback.
 
 ## 🔨 Skills Demonstrated
 
-- **Data Structures:** Manipulating Lists, Stacks, and Objects.
-- **Object-Oriented Programming (OOP):** Created custom `Product` models to encapsulate data.
-- **Dart Logic:** Variable initialization, math operations, and List methods (`.add`, `.removeLast`, `.clear`).
-- **Flutter Framework:** Working with Context, Builders, and Material Design widgets.
-- **Git Version Control:** Professional commit history and repository management.
+- **System Architecture:** Organizing code into Models, Services, and Screens to maintain "Separation of Concerns."
+- **Asynchronous Logic:** Mastering `async`, `await`, and `Future` for non-blocking data operations.
+- **Data Structures:** Expert manipulation of Lists and Stacks for complex state tracking.
 
-## 💻 Code Highlight: The "Smart Remove" Logic
+## 💻 Code Highlight: The LIFO Stack Logic
 
-This snippet demonstrates the Stack Data Structure logic used to manage the cart state:
+This snippet demonstrates the logic used to manage the cart state precisely, ensuring we subtract the exact price of the last item added:
 
 ```dart
 onPressed: () {
